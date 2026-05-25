@@ -1,18 +1,17 @@
+<script lang="ts">
+	import PageHeader from '$lib/components/PageHeader.svelte';
+</script>
+
 <svelte:head>
 	<title>About — Algerians in KC</title>
 	<meta name="description" content="The story behind Algerians in KC — why we built it, who it's for, and how you can get involved." />
 	<link rel="canonical" href="https://algeriansinKC.com/about" />
 </svelte:head>
 
-<div class="bg-gradient-to-br from-green-700 to-green-900 text-white py-12 px-4">
-	<div class="max-w-3xl mx-auto">
-		<a href="/" class="text-green-200 hover:text-white text-sm mb-4 inline-flex items-center gap-1 transition-colors">
-			<i class="fa-solid fa-arrow-left text-xs"></i> Back to home
-		</a>
-		<h1 class="text-3xl md:text-4xl font-extrabold mb-2">About This Site</h1>
-		<p class="text-green-100 text-lg">Built for the community, by the community.</p>
-	</div>
-</div>
+<PageHeader
+	title="About This Site"
+	subtitle="Built for the community, by the community."
+/>
 
 <div class="max-w-3xl mx-auto px-4 py-10 space-y-8">
 

@@ -1,18 +1,17 @@
+<script lang="ts">
+	import PageHeader from '$lib/components/PageHeader.svelte';
+</script>
+
 <svelte:head>
 	<title>Connect — Algerians in KC</title>
 	<meta name="description" content="Connect with the Algerian community in Kansas City — WhatsApp groups by city, newcomer volunteer network, classifieds, and more." />
 	<link rel="canonical" href="https://algeriansinKC.com/community" />
 </svelte:head>
 
-<div class="bg-gradient-to-br from-green-700 to-green-900 text-white py-12 px-4">
-	<div class="max-w-4xl mx-auto">
-		<a href="/" class="text-green-200 hover:text-white text-sm mb-4 inline-flex items-center gap-1 transition-colors">
-			<i class="fa-solid fa-arrow-left text-xs"></i> Back to home
-		</a>
-		<h1 class="text-3xl md:text-4xl font-extrabold mb-2">Connect</h1>
-		<p class="text-green-100 text-lg">Meet other Algerians in KC and get involved in the community.</p>
-	</div>
-</div>
+<PageHeader
+	title="Connect"
+	subtitle="Meet other Algerians in KC and get involved in the community."
+/>
 
 <div class="max-w-4xl mx-auto px-4 py-10 space-y-8">
 

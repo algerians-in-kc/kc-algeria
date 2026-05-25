@@ -1,0 +1,20 @@
+{
+  "name": "Algerians in KC",
+  "short_name": "AlgeriansKC",
+  "description": "Your home away from home in Kansas City — a community resource for Algerians.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9fafb",
+  "theme_color": "#15803d",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["lifestyle", "social"],
+  "lang": "en",
+  "dir": "ltr"
+}
