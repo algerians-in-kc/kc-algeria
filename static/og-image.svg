@@ -1,0 +1,46 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#15803d"/>
+      <stop offset="100%" style="stop-color:#14532d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="1080" cy="90"  r="220" fill="white" fill-opacity="0.04"/>
+  <circle cx="120"  cy="560" r="180" fill="white" fill-opacity="0.04"/>
+  <circle cx="1000" cy="520" r="130" fill="white" fill-opacity="0.03"/>
+
+  <!-- Left accent bar -->
+  <rect x="100" y="275" width="90" height="8" rx="4" fill="url(#accent)"/>
+
+  <!-- Flag emoji area — stylised crescent + star badge -->
+  <rect x="100" y="110" width="80" height="80" rx="18" fill="#f59e0b"/>
+  <text x="140" y="166" font-family="Segoe UI Emoji, Apple Color Emoji, sans-serif" font-size="48" text-anchor="middle">🇩🇿</text>
+
+  <!-- Main title -->
+  <text x="100" y="240" font-family="Arial Black, Arial, sans-serif" font-size="76" font-weight="900" fill="white" letter-spacing="-2">Algerians in KC</text>
+
+  <!-- Tagline -->
+  <text x="100" y="318" font-family="Arial, sans-serif" font-size="34" fill="#86efac">Your home away from home in Kansas City</text>
+
+  <!-- Three language welcome -->
+  <text x="100" y="375" font-family="Arial, sans-serif" font-size="24" fill="#4ade80" opacity="0.8">مرحبا بكم  ·  Bienvenue  ·  Ansuf deg wemkan-agi</text>
+
+  <!-- CTA pill -->
+  <rect x="100" y="422" width="340" height="62" rx="31" fill="url(#accent)"/>
+  <text x="270" y="461" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="white" text-anchor="middle">Free Community Resource</text>
+
+  <!-- Cities strip -->
+  <text x="100" y="548" font-family="Arial, sans-serif" font-size="20" fill="#4ade80" opacity="0.7">Olathe · Overland Park · Gardner · Lawrence · Kansas City MO</text>
+
+  <!-- Domain -->
+  <text x="1100" y="598" font-family="Arial, sans-serif" font-size="26" fill="#86efac" text-anchor="end">algeriansinKC.com</text>
+</svg>

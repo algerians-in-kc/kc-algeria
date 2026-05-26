@@ -3,6 +3,8 @@
 	import { onNavigate } from '$app/navigation';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import GoogleAnalytics from '$lib/components/GoogleAnalytics.svelte';
+	import BackToTop from '$lib/components/BackToTop.svelte';
 	import { page } from '$app/state';
 
 	let { children } = $props();
@@ -46,6 +48,8 @@
 <!-- Skip navigation for screen readers / keyboard users -->
 <a href="#main-content" class="skip-nav">Skip to main content</a>
 
+<GoogleAnalytics />
+
 <div class="min-h-screen bg-gray-50 flex flex-col">
 	<Header />
 	<main id="main-content" class="flex-1 page-transition">
@@ -53,6 +57,8 @@
 	</main>
 	<Footer />
 </div>
+
+<BackToTop />
 
 <!-- Floating help button — mobile only, hides on contact/community pages -->
 {#if !hideHelp}

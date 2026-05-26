@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { intersect } from '$lib/actions/intersect';
+
 	const cities = ['Olathe', 'Overland Park', 'Gardner', 'Lawrence', 'Kansas City MO', 'Lenexa', 'Shawnee', "Lee's Summit", 'Independence'];
 
 	const sections = [
@@ -76,10 +78,20 @@
 <!-- City pills -->
 <div class="bg-green-900 py-3 px-4">
 	<div class="max-w-5xl mx-auto flex flex-wrap justify-center gap-x-4 gap-y-1">
-		{#each cities as city}
-			<span class="text-green-300 text-xs font-medium">
-				<i class="fa-solid fa-location-dot text-green-500 mr-1"></i>{city}
-			</span>
+		{#each [
+			{ label: 'Olathe', slug: 'olathe' },
+			{ label: 'Overland Park', slug: 'overland-park' },
+			{ label: 'Gardner', slug: 'gardner' },
+			{ label: 'Lawrence', slug: 'lawrence' },
+			{ label: 'Kansas City MO', slug: 'kansas-city-mo' },
+			{ label: 'Lenexa', slug: 'lenexa' },
+			{ label: 'Shawnee', slug: 'shawnee' },
+			{ label: "Lee's Summit", slug: 'lees-summit' },
+			{ label: 'Independence', slug: 'independence' },
+		] as city}
+			<a href="/{city.slug}" class="text-green-300 hover:text-white text-xs font-medium transition-colors">
+				<i class="fa-solid fa-location-dot text-green-500 mr-1"></i>{city.label}
+			</a>
 		{/each}
 	</div>
 </div>
@@ -89,8 +101,8 @@
 	<h2 class="text-2xl font-bold text-gray-900 text-center mb-2">Everything you need in one place</h2>
 	<p class="text-gray-500 text-center mb-10 max-w-lg mx-auto text-sm">Built by and for the Algerian community in KC. Free, always.</p>
 	<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-		{#each sections as s}
-			<a href={s.href} class="group bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-lg hover:border-green-200 transition-all duration-200">
+		{#each sections as s, i}
+			<a href={s.href} use:intersect={i * 70} class="group bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-lg hover:border-green-200 transition-all duration-200">
 				<div class="text-4xl mb-4 leading-none">{s.emoji}</div>
 				<h2 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-green-700 transition-colors">{s.title}</h2>
 				<p class="text-gray-500 text-sm leading-relaxed mb-4">{s.desc}</p>
