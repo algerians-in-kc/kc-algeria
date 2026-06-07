@@ -40,8 +40,22 @@
 			<div>
 				<h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Cities We Cover</h3>
 				<ul class="space-y-2 text-sm">
-					{#each ['Olathe', 'Overland Park', 'Gardner', 'Lawrence', 'Kansas City, MO', 'Lenexa', 'Shawnee'] as city}
-						<li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-xs text-green-500"></i>{city}</li>
+					{#each [
+						{ label: 'Olathe', slug: 'olathe' },
+						{ label: 'Overland Park', slug: 'overland-park' },
+						{ label: 'Gardner', slug: 'gardner' },
+						{ label: 'Lawrence', slug: 'lawrence' },
+						{ label: 'Kansas City, MO', slug: 'kansas-city-mo' },
+						{ label: 'Lenexa', slug: 'lenexa' },
+						{ label: 'Shawnee', slug: 'shawnee' },
+						{ label: "Lee's Summit", slug: 'lees-summit' },
+						{ label: 'Independence', slug: 'independence' },
+					] as city}
+						<li>
+							<a href="/{city.slug}" class="flex items-center gap-2 hover:text-white transition-colors">
+								<i class="fa-solid fa-location-dot text-xs text-green-500"></i>{city.label}
+							</a>
+						</li>
 					{/each}
 				</ul>
 			</div>

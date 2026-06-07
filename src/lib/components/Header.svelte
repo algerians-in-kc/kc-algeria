@@ -1,7 +1,18 @@
 <script lang="ts">
 	import { page } from '$app/state';
 
+	import { onMount } from 'svelte';
+
 	let menuOpen = $state(false);
+
+	onMount(() => {
+		const handler = (e: MouseEvent) => {
+			const target = e.target as HTMLElement;
+			if (menuOpen && !target.closest('header')) menuOpen = false;
+		};
+		document.addEventListener('click', handler);
+		return () => document.removeEventListener('click', handler);
+	});
 
 	const nav = [
 		{ href: '/settle', label: 'Settle In', icon: 'fa-house' },
@@ -53,6 +64,7 @@
 			onclick={() => (menuOpen = !menuOpen)}
 			class="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
 			aria-label="Toggle menu"
+			aria-expanded={menuOpen}
 		>
 			<i class="fa-solid {menuOpen ? 'fa-xmark' : 'fa-bars'} text-lg"></i>
 		</button>

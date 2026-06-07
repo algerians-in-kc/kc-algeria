@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 	import { PUBLIC_GA_MEASUREMENT_ID } from '$env/static/public';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
 	onMount(() => {
 		if (!browser || !PUBLIC_GA_MEASUREMENT_ID) return;

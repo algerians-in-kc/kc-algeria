@@ -29,7 +29,7 @@
 			<div class="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-shadow">
 				<div class="flex items-start justify-between gap-3">
 					<div>
-						<h3 class="font-bold text-gray-900">Islamic Center of Johnson County</h3>
+						<h3 class="font-bold text-gray-900">Islamic Society of Johnson County (ISOC)</h3>
 						<p class="text-sm text-gray-500 mt-1 flex items-center gap-1.5">
 							<i class="fa-solid fa-location-dot text-green-600"></i> Olathe, KS
 						</p>
