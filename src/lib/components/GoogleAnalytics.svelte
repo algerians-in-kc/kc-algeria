@@ -17,13 +17,10 @@
 		(window as any).gtag = gtag;
 		gtag('js', new Date());
 		gtag('config', PUBLIC_GA_MEASUREMENT_ID, { send_page_view: false });
+	});
 
-		const unsub = page.subscribe(($page) => {
-			if ((window as any).gtag) {
-				(window as any).gtag('event', 'page_view', { page_path: $page.url.pathname });
-			}
-		});
-
-		return unsub;
+	$effect(() => {
+		if (!browser || !(window as any).gtag || !PUBLIC_GA_MEASUREMENT_ID) return;
+		(window as any).gtag('event', 'page_view', { page_path: page.url.pathname });
 	});
 </script>
