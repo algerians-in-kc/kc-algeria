@@ -32,7 +32,7 @@
   <text x="100" y="318" font-family="Arial, sans-serif" font-size="34" fill="#86efac">Your home away from home in Kansas City</text>
 
   <!-- Three language welcome -->
-  <text x="100" y="375" font-family="Arial, sans-serif" font-size="24" fill="#4ade80" opacity="0.8">مرحبا بكم  ·  Bienvenue  ·  Ansuf deg wemkan-agi</text>
+  <text x="100" y="375" font-family="Arial, sans-serif" font-size="24" fill="#4ade80" opacity="0.8">مرحبا بكم  ·  Bienvenue  ·  Ansuf Yiswen</text>
 
   <!-- CTA pill -->
   <rect x="100" y="422" width="340" height="62" rx="31" fill="url(#accent)"/>

@@ -53,7 +53,7 @@
 			Your home away from home. A practical guide and community hub for Algerians across the KC metro.
 		</p>
 		<p class="text-green-300 text-sm mb-8 tracking-wide">
-			<span class="font-arabic">مرحبا بكم</span> · Bienvenue · Ansuf deg wemkan-agi
+			<span class="font-arabic">مرحبا بكم</span> · Bienvenue · Ansuf Yiswen
 		</p>
 		<div class="flex flex-wrap justify-center gap-3 mb-10">
 			<a href="/settle" class="bg-white text-green-800 px-7 py-3 rounded-xl font-bold hover:bg-green-50 transition-colors shadow-lg">

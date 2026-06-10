@@ -9,7 +9,7 @@
 				<p class="text-sm leading-relaxed mb-3">Your home away from home in Kansas City.</p>
 				<p class="text-sm text-gray-500">مرحبا بكم</p>
 				<p class="text-sm text-gray-500">Bienvenue</p>
-				<p class="text-sm text-gray-500">Ansuf deg wemkan-agi</p>
+				<p class="text-sm text-gray-500">Ansuf Yiswen</p>
 				<div class="flex gap-3 mt-4">
 					<a href="mailto:contact@algeriansinKC.com" class="text-gray-500 hover:text-white transition-colors" aria-label="Email">
 						<i class="fa-solid fa-envelope text-lg"></i>
