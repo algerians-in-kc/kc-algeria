@@ -16,7 +16,6 @@
 		{ value: 'newcomer', label: 'I just arrived — I need help' },
 		{ value: 'volunteer', label: 'I want to volunteer' },
 		{ value: 'directory', label: 'Add my business to the directory' },
-		{ value: 'classified', label: 'Submit a classified listing' },
 		{ value: 'faith', label: 'Spiritual / faith question' },
 		{ value: 'event', label: 'Submit a community event' },
 		{ value: 'other', label: 'Other' },

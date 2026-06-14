@@ -32,7 +32,6 @@
 					<li><a href="/events" class="hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-calendar text-xs text-green-500"></i>Events</a></li>
 					<li><a href="/worship" class="hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-dove text-xs text-green-500"></i>Worship</a></li>
 					<li><a href="/community" class="hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-handshake text-xs text-green-500"></i>Connect</a></li>
-					<li><a href="/classifieds" class="hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-tags text-xs text-green-500"></i>Classifieds</a></li>
 					<li><a href="/about" class="hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-circle-info text-xs text-green-500"></i>About</a></li>
 					<li><a href="/contact" class="hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-paper-plane text-xs text-green-500"></i>Contact</a></li>
 				</ul>

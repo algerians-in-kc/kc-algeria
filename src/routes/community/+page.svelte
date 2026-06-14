@@ -76,15 +76,15 @@
 		</div>
 	</div>
 
-	<!-- Classifieds -->
+	<!-- Classifieds → WhatsApp -->
 	<div id="classifieds" class="bg-white rounded-2xl border border-gray-100 p-6">
 		<div class="flex items-center gap-3 mb-5">
 			<span class="w-9 h-9 bg-purple-100 rounded-full flex items-center justify-center shrink-0">
 				<i class="fa-solid fa-tags text-purple-600"></i>
 			</span>
-			<h2 class="text-xl font-bold text-gray-900">Community Classifieds</h2>
+			<h2 class="text-xl font-bold text-gray-900">Buying, Selling & Trading</h2>
 		</div>
-		<p class="text-gray-600 mb-4 text-sm">Buy, sell, or give away within the community. Jobs, housing, furniture, cars, and services — posted by trusted community members.</p>
+		<p class="text-gray-600 mb-4 text-sm leading-relaxed">Furniture, cars, housing, job leads — all the buy/sell activity happens in our WhatsApp groups. They're faster, photos work natively, and you can ask questions directly. Join the group for your city below.</p>
 		<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
 			{#each [
 				{ icon: 'fa-house', label: 'Housing' },
@@ -98,14 +98,9 @@
 				</div>
 			{/each}
 		</div>
-		<div class="flex flex-col sm:flex-row gap-2">
-			<a href="/classifieds" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white text-sm font-bold px-5 py-3 rounded-xl transition-colors text-center">
-				<i class="fa-solid fa-tags mr-2"></i>Browse Classifieds
-			</a>
-			<a href="/contact?subject=classified" class="flex-1 bg-white hover:bg-purple-50 text-purple-700 border border-purple-200 text-sm font-bold px-5 py-3 rounded-xl transition-colors text-center">
-				<i class="fa-solid fa-plus mr-2"></i>Submit a Listing
-			</a>
-		</div>
+		<a href="#top" onclick={(e) => { e.preventDefault(); document.querySelector('.fa-whatsapp')?.scrollIntoView({ behavior: 'smooth', block: 'center' }); }} class="inline-block bg-green-600 hover:bg-green-700 text-white text-sm font-bold px-5 py-3 rounded-xl transition-colors">
+			<i class="fa-brands fa-whatsapp mr-2"></i>Go to WhatsApp Groups
+		</a>
 	</div>
 
 	<!-- List your business -->
