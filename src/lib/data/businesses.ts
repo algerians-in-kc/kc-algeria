@@ -29,7 +29,7 @@ export const businesses: Business[] = [
 		phone: '(913) 283-2765',
 		hours: 'Daily 7:00 AM – 11:00 PM',
 		description: 'Algerian-owned coffee shop and café serving specialty coffee, homemade pastries, and light Mediterranean bites in Olathe.',
-		languages: ['Arabic', 'French', 'English'],
+		languages: ['Arabic', 'Berber', 'French', 'English'],
 	},
 	{
 		id: 'kanza-market',
@@ -42,7 +42,7 @@ export const businesses: Business[] = [
 		phone: '(913) 712-8664',
 		hours: 'Daily 10:00 AM – 8:00 PM',
 		description: 'Your one-stop Mediterranean and North African grocery store in Olathe. Fresh produce, halal meats, North African sausages, spices, and homemade cookies.',
-		languages: ['Arabic', 'French', 'English'],
+		languages: ['Arabic', 'Berber', 'French', 'English'],
 	},
 	{
 		id: 'algerian-delights',
@@ -56,7 +56,7 @@ export const businesses: Business[] = [
 		website: 'https://www.algerian-delights.com',
 		hours: 'Mon & Wed–Sat 7:30 AM – 7:00 PM · Closed Tuesday',
 		description: 'Family-owned Algerian bakery specializing in traditional homemade cookies, pastries, cakes, and Algerian sweets made from scratch.',
-		languages: ['Arabic', 'French', 'English'],
+		languages: ['Arabic', 'Berber', 'French', 'English'],
 	},
 	{
 		id: 'sa-nails-barber',
@@ -69,7 +69,7 @@ export const businesses: Business[] = [
 		website: 'https://sa.bybluedigital.com',
 		booking: 'https://www.vagaro.com/sanailsandbarber',
 		description: 'Modern nail salon and precision barbering under one roof. Licensed technicians, online booking, and a welcoming atmosphere for the whole family.',
-		languages: ['Arabic', 'French', 'English'],
+		languages: ['Arabic', 'Berber', 'French', 'English'],
 	},
 	{
 		id: 'nextgen-hvac',
@@ -83,7 +83,7 @@ export const businesses: Business[] = [
 		website: 'https://nextgenolathe.com',
 		hours: 'Call for availability',
 		description: 'Professional HVAC company serving the KC metro. Installation, repair, and maintenance for residential and commercial properties. 5-star rated on Angi.',
-		languages: ['Arabic', 'French', 'English'],
+		languages: ['Arabic', 'Berber', 'French', 'English'],
 	},
 ];
 
