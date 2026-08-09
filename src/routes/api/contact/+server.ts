@@ -1,11 +1,23 @@
 import type { RequestHandler } from './$types';
 import { env } from '$env/dynamic/private';
 
-// Simple in-memory rate limiter: max 3 submissions per IP per 10 minutes
+// Best-effort in-memory rate limiter: max 3 submissions per IP per 10 minutes.
+// Note: on serverless (Vercel) this is per-instance and resets on cold start, so it
+// is a speed bump against casual abuse, not a hard guarantee. The honeypot and email
+// verification are the primary spam defenses. For strict limits, back this with a
+// shared store (e.g. Upstash Redis).
 const rateMap = new Map<string, { count: number; resetAt: number }>();
 
 function isRateLimited(ip: string): boolean {
 	const now = Date.now();
+
+	// Opportunistically evict expired entries so the map can't grow unbounded.
+	if (rateMap.size > 500) {
+		for (const [key, val] of rateMap) {
+			if (now > val.resetAt) rateMap.delete(key);
+		}
+	}
+
 	const entry = rateMap.get(ip);
 
 	if (!entry || now > entry.resetAt) {
@@ -16,6 +28,18 @@ function isRateLimited(ip: string): boolean {
 	if (entry.count >= 3) return true;
 	entry.count++;
 	return false;
+}
+
+// Escape values before interpolating into the HTML email body. sanitize() only trims
+// and strips angle brackets; this closes attribute-injection vectors (e.g. quotes in
+// the address inside a mailto href).
+function escapeHtml(str: string): string {
+	return str
+		.replace(/&/g, '&amp;')
+		.replace(/</g, '&lt;')
+		.replace(/>/g, '&gt;')
+		.replace(/"/g, '&quot;')
+		.replace(/'/g, '&#39;');
 }
 
 function getIp(request: Request): string {
@@ -103,12 +127,12 @@ export const POST: RequestHandler = async ({ request }) => {
 				<div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
 					<h2 style="color: #15803d;">New message — Algerians in KC</h2>
 					<table style="border-collapse: collapse; width: 100%;">
-						<tr><td style="padding: 6px 0; color: #6b7280; font-size: 14px;">From</td><td style="padding: 6px 0; font-weight: bold;">${name}</td></tr>
-						<tr><td style="padding: 6px 0; color: #6b7280; font-size: 14px;">Email</td><td style="padding: 6px 0;"><a href="mailto:${email}">${email}</a></td></tr>
-						<tr><td style="padding: 6px 0; color: #6b7280; font-size: 14px;">Topic</td><td style="padding: 6px 0;">${emailSubject}</td></tr>
+						<tr><td style="padding: 6px 0; color: #6b7280; font-size: 14px;">From</td><td style="padding: 6px 0; font-weight: bold;">${escapeHtml(name)}</td></tr>
+						<tr><td style="padding: 6px 0; color: #6b7280; font-size: 14px;">Email</td><td style="padding: 6px 0;"><a href="mailto:${encodeURIComponent(email)}">${escapeHtml(email)}</a></td></tr>
+						<tr><td style="padding: 6px 0; color: #6b7280; font-size: 14px;">Topic</td><td style="padding: 6px 0;">${escapeHtml(emailSubject)}</td></tr>
 					</table>
 					<hr style="margin: 16px 0; border: none; border-top: 1px solid #e5e7eb;" />
-					<p style="white-space: pre-wrap; color: #374151; line-height: 1.6;">${message}</p>
+					<p style="white-space: pre-wrap; color: #374151; line-height: 1.6;">${escapeHtml(message)}</p>
 				</div>
 			`
 		})

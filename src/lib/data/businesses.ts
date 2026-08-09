@@ -87,8 +87,11 @@ export const businesses: Business[] = [
 	},
 ];
 
-export const categoryMeta: Record<BusinessCategory, { label: string; icon: string; color: string }> = {
-	food: { label: 'Food & Drinks', icon: 'fa-utensils', color: 'text-orange-500' },
-	beauty: { label: 'Beauty & Care', icon: 'fa-scissors', color: 'text-pink-500' },
-	'home-services': { label: 'Home Services', icon: 'fa-wrench', color: 'text-blue-500' },
+export const categoryMeta: Record<
+	BusinessCategory,
+	{ label: string; icon: string; color: string; schemaType: string }
+> = {
+	food: { label: 'Food & Drinks', icon: 'fa-utensils', color: 'text-orange-500', schemaType: 'FoodEstablishment' },
+	beauty: { label: 'Beauty & Care', icon: 'fa-scissors', color: 'text-pink-500', schemaType: 'HealthAndBeautyBusiness' },
+	'home-services': { label: 'Home Services', icon: 'fa-wrench', color: 'text-blue-500', schemaType: 'HomeAndConstructionBusiness' },
 };

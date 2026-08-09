@@ -32,12 +32,41 @@
 		{ icon: 'fa-calculator', title: 'Finance & Accounting', color: 'bg-green-50 text-green-600', desc: 'Tax preparation, accounting, and financial planning for immigrants.' },
 		{ icon: 'fa-house-chimney', title: 'Real Estate', color: 'bg-amber-50 text-amber-600', desc: 'Real estate agents who understand the immigrant experience.' },
 	];
+
+	// LocalBusiness structured data so each business can appear in Google & Maps.
+	const directoryJsonLd = JSON.stringify({
+		'@context': 'https://schema.org',
+		'@graph': businesses.map((b) => {
+			const node: Record<string, unknown> = {
+				'@type': categoryMeta[b.category].schemaType,
+				name: b.name,
+				description: b.description,
+				areaServed: 'Kansas City Metro Area',
+				knowsLanguage: b.languages,
+			};
+			if (b.address) {
+				node.address = {
+					'@type': 'PostalAddress',
+					streetAddress: b.address.split(',')[0].trim(),
+					addressLocality: b.city,
+					addressRegion: b.state,
+					postalCode: b.address.match(/\d{5}/)?.[0],
+					addressCountry: 'US',
+				};
+			}
+			if (b.phone) node.telephone = b.phone;
+			if (b.website) node.url = b.website;
+			if (b.hours) node.openingHours = b.hours;
+			return node;
+		}),
+	});
 </script>
 
 <svelte:head>
 	<title>Community Directory — Algerians in KC</title>
 	<meta name="description" content="Algerian businesses and Arabic/French-speaking professionals in Kansas City — restaurants, groceries, beauty, HVAC, and more." />
 	<link rel="canonical" href="https://algeriansinKC.com/directory" />
+	{@html `<script type="application/ld+json">${directoryJsonLd}</script>`}
 </svelte:head>
 
 <PageHeader
