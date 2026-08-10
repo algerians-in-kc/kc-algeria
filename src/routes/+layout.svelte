@@ -23,9 +23,18 @@
 	const hideHelp = $derived(
 		page.url.pathname === '/contact' || page.url.pathname === '/community'
 	);
+
+	// Keep preview/staging deploys out of search engines. Any *.vercel.app URL or
+	// localhost is treated as non-production and gets noindex; once a real domain is
+	// pointed at the site, indexing turns on automatically. Remove/adjust the host
+	// check at launch if the production domain isn't the only allowed host.
+	const noindex = $derived(/vercel\.app$|localhost|127\.0\.0\.1/.test(page.url.host));
 </script>
 
 <svelte:head>
+	{#if noindex}
+		<meta name="robots" content="noindex, nofollow" />
+	{/if}
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
