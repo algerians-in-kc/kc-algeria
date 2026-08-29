@@ -54,7 +54,7 @@
 
 		<div class="hidden lg:flex items-center gap-2">
 			<a href="/about" class="text-sm text-gray-500 hover:text-gray-700 px-2 py-1 transition-colors">About</a>
-			<a href="/community#volunteer" class="bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors whitespace-nowrap">
+			<a href="/newcomer" class="bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors whitespace-nowrap">
 				<i class="fa-solid fa-handshake mr-1.5"></i>Get Help
 			</a>
 		</div>
@@ -88,7 +88,7 @@
 				{/each}
 				<div class="border-t border-gray-100 mt-2 pt-2 flex flex-col gap-1">
 					<a href="/about" onclick={() => (menuOpen = false)} class="px-3 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 rounded-lg">About</a>
-					<a href="/community#volunteer" onclick={() => (menuOpen = false)} class="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-4 py-3 rounded-lg transition-colors mt-1">
+					<a href="/newcomer" onclick={() => (menuOpen = false)} class="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-4 py-3 rounded-lg transition-colors mt-1">
 						<i class="fa-solid fa-handshake"></i>Get Help
 					</a>
 				</div>

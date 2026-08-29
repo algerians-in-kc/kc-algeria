@@ -73,7 +73,7 @@
 			<div class="border-t border-gray-100 pt-5">
 				<h3 class="text-sm font-semibold text-gray-700 mb-3">Quick links</h3>
 				<ul class="space-y-2.5 text-sm">
-					<li><a href="/community#volunteer" class="flex items-center gap-2 text-green-600 hover:underline"><i class="fa-solid fa-handshake text-xs"></i> Volunteer sign-up</a></li>
+					<li><a href="/volunteer" class="flex items-center gap-2 text-green-600 hover:underline"><i class="fa-solid fa-handshake text-xs"></i> Volunteer sign-up</a></li>
 					<li><a href="/community#list" class="flex items-center gap-2 text-green-600 hover:underline"><i class="fa-solid fa-store text-xs"></i> List your business</a></li>
 					<li><a href="/settle" class="flex items-center gap-2 text-green-600 hover:underline"><i class="fa-solid fa-house text-xs"></i> Newcomer guide</a></li>
 				</ul>

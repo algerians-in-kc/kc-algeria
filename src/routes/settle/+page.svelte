@@ -285,7 +285,7 @@
 		</div>
 		<h2 class="text-xl font-bold text-gray-900 mb-2">{t.helpTitle}</h2>
 		<p class="text-gray-600 mb-5 max-w-md mx-auto text-sm leading-relaxed">{t.helpDesc}</p>
-		<a href="/community#volunteer" class="inline-block bg-green-700 hover:bg-green-800 text-white px-7 py-3 rounded-xl font-bold transition-colors">
+		<a href="/newcomer" class="inline-block bg-green-700 hover:bg-green-800 text-white px-7 py-3 rounded-xl font-bold transition-colors">
 			<i class="fa-solid fa-handshake mr-2"></i>{t.helpCta}
 		</a>
 	</div>

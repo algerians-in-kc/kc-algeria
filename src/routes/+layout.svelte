@@ -72,7 +72,7 @@
 <!-- Floating help button — mobile only, hides on contact/community pages -->
 {#if !hideHelp}
 	<a
-		href="/community#volunteer"
+		href="/newcomer"
 		class="md:hidden fixed bottom-5 right-4 z-40 bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg px-4 py-3 flex items-center gap-2 text-sm font-bold transition-all active:scale-95 no-print"
 		aria-label="Get help from the community"
 	>

@@ -79,7 +79,7 @@
 						<span class="text-xs bg-sky-100 text-sky-700 px-2 py-0.5 rounded-full font-medium shrink-0">Recurring</span>
 					</div>
 					<p class="text-sm text-gray-500 mt-1.5 leading-relaxed">Informal meetups specifically for new arrivals — a chance to meet people, ask questions, and get oriented in KC. Organized by community volunteers.</p>
-					<a href="/contact?subject=newcomer" class="inline-flex items-center gap-1 mt-3 text-xs text-sky-600 font-semibold hover:underline">
+					<a href="/newcomer" class="inline-flex items-center gap-1 mt-3 text-xs text-sky-600 font-semibold hover:underline">
 						<i class="fa-solid fa-user-plus"></i> Get notified about the next one
 					</a>
 				</div>

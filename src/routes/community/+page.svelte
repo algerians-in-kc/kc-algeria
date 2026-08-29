@@ -61,7 +61,7 @@
 				<div class="text-2xl mb-2">✈️</div>
 				<h3 class="font-bold text-gray-900 mb-1">I just arrived — I need help</h3>
 				<p class="text-sm text-gray-500 mb-4 leading-relaxed">Connect with a volunteer who has been through the same journey and can guide you through the first weeks.</p>
-				<a href="/contact?subject=newcomer" class="inline-block text-sm font-bold text-green-700 bg-white border border-green-200 px-4 py-2 rounded-lg hover:bg-green-50 transition-colors">
+				<a href="/newcomer" class="inline-block text-sm font-bold text-green-700 bg-white border border-green-200 px-4 py-2 rounded-lg hover:bg-green-50 transition-colors">
 					Request Help <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
 				</a>
 			</div>
@@ -69,7 +69,7 @@
 				<div class="text-2xl mb-2">🤝</div>
 				<h3 class="font-bold text-gray-900 mb-1">I want to volunteer</h3>
 				<p class="text-sm text-gray-500 mb-4 leading-relaxed">Give back to the community. Your experience in KC is valuable to someone just arriving today.</p>
-				<a href="/contact?subject=volunteer" class="inline-block text-sm font-bold text-amber-700 bg-white border border-amber-200 px-4 py-2 rounded-lg hover:bg-amber-50 transition-colors">
+				<a href="/volunteer" class="inline-block text-sm font-bold text-amber-700 bg-white border border-amber-200 px-4 py-2 rounded-lg hover:bg-amber-50 transition-colors">
 					Sign Up <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
 				</a>
 			</div>

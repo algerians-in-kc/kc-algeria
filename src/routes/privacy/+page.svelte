@@ -18,6 +18,8 @@
 			<h2 class="text-base font-bold text-gray-900 mb-2">Information we collect</h2>
 			<ul class="space-y-1 list-disc list-inside">
 				<li>Contact form submissions — name, email, and message when you contact us</li>
+				<li>Volunteer sign-ups: name, contact details, city, languages, how you can help, and availability</li>
+				<li>Newcomer help requests: name, contact details, city, languages, what you need help with, and any details you share</li>
 				<li>Anonymous usage data via Google Analytics (pages visited, device type, location by country)</li>
 				<li>No accounts, no registration, no passwords stored</li>
 			</ul>
@@ -27,8 +29,10 @@
 			<h2 class="text-base font-bold text-gray-900 mb-2">How we use your information</h2>
 			<ul class="space-y-1 list-disc list-inside">
 				<li>Contact form data is used solely to respond to your message</li>
+				<li>Volunteer and newcomer information is used only to connect newcomers with vetted volunteers. Coordinators review submissions privately, and we ask for your consent before sharing your details with a matched volunteer or newcomer.</li>
+				<li>This information is stored in a secure, access-controlled system available only to our coordinators</li>
 				<li>Analytics data helps us understand how to improve the site</li>
-				<li>We never sell, share, or rent your personal information to anyone</li>
+				<li>We never sell, share, or rent your personal information to anyone outside this matching process</li>
 			</ul>
 		</div>
 
