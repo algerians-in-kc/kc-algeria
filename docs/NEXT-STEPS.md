@@ -37,5 +37,9 @@ end-to-end (intake forms → Airtable → coordinator email automations).
 - [ ] Resend for branded email from the real domain (deferred — needs domain verification; Airtable
       automations cover notifications until then).
 - [ ] Per-business detail pages + directory search as the directory grows.
+- [ ] **All non-English content must be human-reviewed by a native speaker before it ships**
+      (machine translation is not acceptable, especially on safety/legal content). Specifically:
+      add reviewed **Arabic** to the `/safety` page — the page/data already carry RTL support and
+      an `ar` slot; just fill in `src/lib/data/safety.ts`. FR is reviewed/OK.
 - [ ] Global language switcher (persisted) to deliver the FR/AR/Tamazight promise.
 - [ ] Revisit a custom admin dashboard only if Airtable is outgrown (many coordinators / hundreds of records).

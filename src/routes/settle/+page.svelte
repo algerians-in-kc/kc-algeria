@@ -223,6 +223,18 @@
 	</div>
 </div>
 
+<!-- Scam-awareness callout — this page (SSN, bank, housing) is prime scam territory -->
+<div class="max-w-4xl mx-auto px-4 pt-4">
+	<a href="/safety" class="flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-xl p-4 hover:bg-amber-100 transition-colors">
+		<i class="fa-solid fa-shield-halved text-amber-600 text-lg mt-0.5 shrink-0"></i>
+		<div class="flex-1">
+			<p class="text-sm font-semibold text-amber-900">{lang === 'en' ? 'Watch out for scams' : 'Attention aux arnaques'}</p>
+			<p class="text-sm text-amber-800">{lang === 'en' ? 'Newcomers are common targets. Learn the warning signs before you pay or share anything.' : 'Les nouveaux arrivants sont des cibles fréquentes. Repérez les signaux avant de payer ou de partager quoi que ce soit.'}</p>
+		</div>
+		<i class="fa-solid fa-arrow-right text-amber-600 text-xs mt-1.5 shrink-0"></i>
+	</a>
+</div>
+
 <div class="max-w-4xl mx-auto px-4 py-6 space-y-6">
 
 	{#each t.steps as step, i}

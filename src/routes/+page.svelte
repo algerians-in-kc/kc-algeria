@@ -5,6 +5,7 @@
 
 	const sections = [
 		{ href: '/settle', icon: 'fa-house', emoji: '🏠', title: 'Settle In', desc: "SSN, driver's license, bank account, housing, schools — your complete first-weeks checklist.", color: 'green' },
+		{ href: '/safety', icon: 'fa-shield-halved', emoji: '🛡️', title: 'Stay Safe', desc: 'Spot and avoid common scams that target newcomers — rules that always hold true, in your language.', color: 'red' },
 		{ href: '/work', icon: 'fa-briefcase', emoji: '💼', title: 'Find Work', desc: 'US resume tips, degree recognition, top KC employers, and networking with Algerian professionals.', color: 'blue' },
 		{ href: '/directory', icon: 'fa-address-book', emoji: '📋', title: 'Directory', desc: 'Algerian businesses and Arabic/French-speaking doctors, lawyers, accountants near you.', color: 'purple' },
 		{ href: '/events', icon: 'fa-calendar', emoji: '📅', title: 'Events', desc: 'Community gatherings, cultural events, Independence Day celebrations, and more.', color: 'amber' },

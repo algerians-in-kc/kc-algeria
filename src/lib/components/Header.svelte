@@ -16,6 +16,7 @@
 
 	const nav = [
 		{ href: '/settle', label: 'Settle In', icon: 'fa-house' },
+		{ href: '/safety', label: 'Stay Safe', icon: 'fa-shield-halved' },
 		{ href: '/work', label: 'Find Work', icon: 'fa-briefcase' },
 		{ href: '/directory', label: 'Directory', icon: 'fa-address-book' },
 		{ href: '/events', label: 'Events', icon: 'fa-calendar' },
