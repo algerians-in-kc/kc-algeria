@@ -145,7 +145,7 @@
 						{/if}
 					</button>
 
-					<p class="text-xs text-gray-400 text-center">We never share your email. <a href="/privacy" class="hover:text-gray-600 underline">Privacy policy</a></p>
+					<p class="text-xs text-gray-400 text-center">We never share your email. <a href="/privacy" target="_blank" rel="noopener" class="hover:text-gray-600 underline">Privacy policy<i class="fa-solid fa-arrow-up-right-from-square text-[0.6rem] ms-1" aria-hidden="true"></i><span class="sr-only"> (opens in a new tab)</span></a></p>
 				</form>
 			{/if}
 		</div>

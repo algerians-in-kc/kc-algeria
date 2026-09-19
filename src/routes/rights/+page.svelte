@@ -98,8 +98,6 @@
 				{#each getHelp as org}
 					<a
 						href="https://{org.site}"
-						target="_blank"
-						rel="noopener noreferrer"
 						class="flex items-center justify-between gap-2 bg-gray-50 hover:bg-green-50 border border-gray-100 rounded-xl px-4 py-3 transition-colors"
 					>
 						<span class="text-sm font-medium text-gray-800">{org.name}</span>

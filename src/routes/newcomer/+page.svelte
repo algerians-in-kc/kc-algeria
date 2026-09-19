@@ -170,7 +170,7 @@
 			<div class="bg-green-50/60 rounded-2xl border border-green-100 p-6">
 				<label class="flex items-start gap-2.5 cursor-pointer">
 					<input type="checkbox" bind:checked={consent} class="mt-0.5 accent-green-600" />
-					<span class="text-sm text-gray-700">I agree that a coordinator may store my request and connect me with a vetted volunteer, sharing what I've written here with them. <a href="/privacy" class="text-green-700 underline">Privacy policy</a>.</span>
+					<span class="text-sm text-gray-700">I agree that a coordinator may store my request and connect me with a vetted volunteer, sharing what I've written here with them. <a href="/privacy" target="_blank" rel="noopener" class="text-green-700 underline">Privacy policy<i class="fa-solid fa-arrow-up-right-from-square text-[0.6rem] ms-1" aria-hidden="true"></i><span class="sr-only"> (opens in a new tab)</span></a>.</span>
 				</label>
 			</div>
 

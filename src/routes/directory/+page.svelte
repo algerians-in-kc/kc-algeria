@@ -154,17 +154,17 @@
 						</a>
 					{/if}
 					{#if b.booking}
-						<a href={b.booking} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-xs font-semibold bg-amber-500 hover:bg-amber-600 text-white px-3 py-1.5 rounded-lg transition-colors">
+						<a href={b.booking} class="flex items-center gap-1.5 text-xs font-semibold bg-amber-500 hover:bg-amber-600 text-white px-3 py-1.5 rounded-lg transition-colors">
 							<i class="fa-solid fa-calendar-check text-xs"></i>Book
 						</a>
 					{/if}
 					{#if b.website}
-						<a href={b.website} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-xs font-semibold bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 px-3 py-1.5 rounded-lg transition-colors">
+						<a href={b.website} class="flex items-center gap-1.5 text-xs font-semibold bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 px-3 py-1.5 rounded-lg transition-colors">
 							<i class="fa-solid fa-globe text-xs"></i>Website
 						</a>
 					{/if}
 					{#if b.address}
-						<a href={mapsUrl(b.address)} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-xs font-semibold bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 px-3 py-1.5 rounded-lg transition-colors">
+						<a href={mapsUrl(b.address)} class="flex items-center gap-1.5 text-xs font-semibold bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 px-3 py-1.5 rounded-lg transition-colors">
 							<i class="fa-solid fa-map-location-dot text-xs"></i>Directions
 						</a>
 					{/if}
