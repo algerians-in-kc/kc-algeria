@@ -102,6 +102,16 @@
 			</section>
 		</div>
 
+		<!-- Cross-link to Know Your Rights -->
+		<a href="/rights" class="flex items-center gap-4 bg-white border border-gray-200 rounded-2xl p-5 hover:border-green-300 hover:shadow-sm transition-all">
+			<span class="text-3xl shrink-0">⚖️</span>
+			<div class="flex-1">
+				<p class="font-bold text-gray-900">{lang === 'fr' ? 'À lire aussi : Connaissez vos droits' : 'Also read: Know Your Rights'}</p>
+				<p class="text-sm text-gray-500">{lang === 'fr' ? "Vos droits de locataire, de travailleur et de résident — et où trouver de l'aide." : 'Your rights as a renter, worker, and resident — and where to get help.'}</p>
+			</div>
+			<i class="fa-solid {isRtl ? 'fa-arrow-left' : 'fa-arrow-right'} text-green-600 shrink-0"></i>
+		</a>
+
 		<!-- Ask a volunteer CTA -->
 		<section class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border border-green-200 p-8 text-center">
 			<div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">

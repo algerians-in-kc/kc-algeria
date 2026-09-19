@@ -22,6 +22,7 @@
 				<ul class="space-y-2.5 text-sm">
 					<li><a href="/settle" class="hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-house text-xs text-green-500"></i>Settle In</a></li>
 					<li><a href="/safety" class="hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-shield-halved text-xs text-green-500"></i>Stay Safe</a></li>
+					<li><a href="/rights" class="hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-scale-balanced text-xs text-green-500"></i>Know Your Rights</a></li>
 					<li><a href="/work" class="hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-briefcase text-xs text-green-500"></i>Find Work</a></li>
 					<li><a href="/directory" class="hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-address-book text-xs text-green-500"></i>Directory</a></li>
 				</ul>
