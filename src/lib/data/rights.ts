@@ -159,5 +159,5 @@ export const getHelp: { name: string; site: string }[] = [
 	{ name: 'El Centro (Kansas City, KS)', site: 'elcentroinc.com' },
 	{ name: 'Della Lamb Community Services', site: 'dellalamb.org' },
 	{ name: 'Jewish Vocational Service (JVS) Kansas City', site: 'jvskc.org' },
-	{ name: 'National immigration legal help directory', site: 'immigrationadvocates.org/legaldirectory' },
+	{ name: 'National immigration legal help directory', site: 'www.immigrationadvocates.org/nonprofit/legaldirectory/' },
 ];
