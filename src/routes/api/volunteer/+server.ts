@@ -7,6 +7,7 @@ import {
 	escapeHtml,
 	isValidEmail,
 	notifyCoordinators,
+	verifyTurnstile,
 } from '$lib/server/forms';
 
 const rateLimit = createRateLimiter(3, 10 * 60 * 1000);
@@ -31,6 +32,10 @@ export const POST: RequestHandler = async ({ request }) => {
 
 	// Honeypot — bots fill this, humans leave it empty.
 	if (body.website) return json({ ok: true }, 200);
+
+	if (!(await verifyTurnstile(body.turnstileToken, ip))) {
+		return json({ error: 'Verification failed. Please reload the page and try again.' }, 403);
+	}
 
 	const name = sanitize(body.name, 120);
 	const email = sanitize(body.email, 200);

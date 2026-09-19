@@ -36,6 +36,33 @@ export function createRateLimiter(max: number, windowMs: number) {
 	};
 }
 
+/**
+ * Verify a Cloudflare Turnstile token. Skipped (returns true) until TURNSTILE_SECRET_KEY
+ * is set so the forms work before the CAPTCHA is wired up. Once the secret is set it
+ * fails closed: a missing/invalid token or a Cloudflare outage rejects the submission.
+ */
+export async function verifyTurnstile(token: unknown, ip: string): Promise<boolean> {
+	const secret = env.TURNSTILE_SECRET_KEY;
+	if (!secret) return true;
+	if (typeof token !== 'string' || !token || token.length > 2048) return false;
+
+	try {
+		const params = new URLSearchParams({ secret, response: token });
+		if (ip !== 'unknown') params.set('remoteip', ip);
+		const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+			method: 'POST',
+			body: params,
+			signal: AbortSignal.timeout(5000),
+		});
+		if (!res.ok) return false;
+		const data = (await res.json()) as { success?: boolean };
+		return data.success === true;
+	} catch (err) {
+		console.error('[turnstile] verify error', err);
+		return false;
+	}
+}
+
 export function sanitize(str: unknown, max = 2000): string {
 	return String(str ?? '')
 		.replace(/[<>]/g, '')

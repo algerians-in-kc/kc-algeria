@@ -1,5 +1,6 @@
 import type { RequestHandler } from './$types';
 import { env } from '$env/dynamic/private';
+import { verifyTurnstile } from '$lib/server/forms';
 
 // Best-effort in-memory rate limiter: max 3 submissions per IP per 10 minutes.
 // Note: on serverless (Vercel) this is per-instance and resets on cold start, so it
@@ -85,7 +86,14 @@ export const POST: RequestHandler = async ({ request }) => {
 		return new Response(JSON.stringify({ ok: true }), { status: 200 });
 	}
 
-	const name = sanitize(String(body.name ?? ''));
+	if (!(await verifyTurnstile(body.turnstileToken, ip))) {
+		return new Response(
+			JSON.stringify({ error: 'Verification failed. Please reload the page and try again.' }),
+			{ status: 403, headers: { 'Content-Type': 'application/json' } }
+		);
+	}
+
+	const name =sanitize(String(body.name ?? ''));
 	const email = sanitize(String(body.email ?? ''));
 	const subject = sanitize(String(body.subject ?? ''));
 	const message = sanitize(String(body.message ?? ''));

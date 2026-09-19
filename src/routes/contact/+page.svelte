@@ -1,12 +1,16 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import Turnstile from '$lib/components/Turnstile.svelte';
+	import { turnstileEnabled } from '$lib/turnstile';
 
 	let name = $state('');
 	let email = $state('');
 	let subject = $state(page.url.searchParams.get('subject') || '');
 	let message = $state('');
 	let honeypot = $state('');
+	let turnstileToken = $state('');
+	let turnstile: Turnstile | undefined = $state();
 	let sending = $state(false);
 	let sent = $state(false);
 	let errorMsg = $state('');
@@ -30,7 +34,7 @@
 			const res = await fetch('/api/contact', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ name: name.trim(), email: email.trim(), subject, message: message.trim(), website: honeypot })
+				body: JSON.stringify({ name: name.trim(), email: email.trim(), subject, message: message.trim(), website: honeypot, turnstileToken })
 			});
 			const data = await res.json();
 			if (!res.ok) { errorMsg = data.error ?? 'Something went wrong. Please try again.'; return; }
@@ -39,10 +43,11 @@
 			errorMsg = 'Network error. Please email contact@algeriansinKC.com directly.';
 		} finally {
 			sending = false;
+			turnstile?.reset();
 		}
 	}
 
-	const valid = $derived(name.trim().length >= 2 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && message.trim().length >= 10);
+	const valid = $derived(name.trim().length >= 2 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && message.trim().length >= 10 && (!turnstileEnabled || turnstileToken !== ''));
 </script>
 
 <svelte:head>
@@ -129,6 +134,8 @@
 						<textarea id="message" bind:value={message} required minlength="10" rows="5" placeholder="Write in Arabic, French, Tamazight, or English — whatever is easiest for you." class="w-full px-3.5 py-2.5 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none resize-y transition-shadow placeholder:text-gray-400"></textarea>
 						<p class="text-xs text-gray-400 mt-1 text-right">{message.length}/2000</p>
 					</div>
+
+					<Turnstile bind:this={turnstile} bind:token={turnstileToken} />
 
 					{#if errorMsg}
 						<div class="bg-red-50 text-red-700 text-sm rounded-xl px-4 py-3 flex items-start gap-2 border border-red-100">

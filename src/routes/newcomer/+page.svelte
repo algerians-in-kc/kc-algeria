@@ -1,5 +1,7 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import Turnstile from '$lib/components/Turnstile.svelte';
+	import { turnstileEnabled } from '$lib/turnstile';
 	import { LANGUAGES, INTAKE_CITIES, HELP_TYPES, ARRIVAL_STATUS, URGENCY } from '$lib/data/intake';
 
 	let name = $state('');
@@ -13,6 +15,8 @@
 	let preferWomanVolunteer = $state(false);
 	let consent = $state(false);
 	let honeypot = $state('');
+	let turnstileToken = $state('');
+	let turnstile: Turnstile | undefined = $state();
 
 	let sending = $state(false);
 	let sent = $state(false);
@@ -23,7 +27,11 @@
 	}
 
 	const valid = $derived(
-		name.trim().length >= 2 && contact.trim().length >= 3 && needs.length > 0 && consent,
+		name.trim().length >= 2 &&
+			contact.trim().length >= 3 &&
+			needs.length > 0 &&
+			consent &&
+			(!turnstileEnabled || turnstileToken !== ''),
 	);
 
 	async function handleSubmit(e: Event) {
@@ -47,6 +55,7 @@
 					preferWomanVolunteer,
 					consent,
 					website: honeypot,
+					turnstileToken,
 				}),
 			});
 			const data = await res.json();
@@ -59,6 +68,7 @@
 			errorMsg = 'Network error. Please try again or email contact@algeriansinKC.com.';
 		} finally {
 			sending = false;
+			turnstile?.reset();
 		}
 	}
 </script>
@@ -173,6 +183,8 @@
 					<span class="text-sm text-gray-700">I agree that a coordinator may store my request and connect me with a vetted volunteer, sharing what I've written here with them. <a href="/privacy" target="_blank" rel="noopener" class="text-green-700 underline">Privacy policy<i class="fa-solid fa-arrow-up-right-from-square text-[0.6rem] ms-1" aria-hidden="true"></i><span class="sr-only"> (opens in a new tab)</span></a>.</span>
 				</label>
 			</div>
+
+			<Turnstile bind:this={turnstile} bind:token={turnstileToken} />
 
 			{#if errorMsg}
 				<div class="bg-red-50 text-red-700 text-sm rounded-xl px-4 py-3 flex items-start gap-2 border border-red-100">
