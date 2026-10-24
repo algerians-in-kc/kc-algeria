@@ -1,4 +1,14 @@
 <script lang="ts">
+	// Self-hosted fonts & icons (no third-party requests — privacy/GDPR + perf + reliability).
+	import '@fontsource/inter/400.css';
+	import '@fontsource/inter/400-italic.css';
+	import '@fontsource/inter/500.css';
+	import '@fontsource/inter/600.css';
+	import '@fontsource/inter/700.css';
+	import '@fontsource/inter/800.css';
+	import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
+	import '@fortawesome/fontawesome-free/css/solid.min.css';
+	import '@fortawesome/fontawesome-free/css/brands.min.css';
 	import '../app.css';
 	import { onNavigate } from '$app/navigation';
 	import Header from '$lib/components/Header.svelte';
@@ -35,12 +45,6 @@
 	{#if noindex}
 		<meta name="robots" content="noindex, nofollow" />
 	{/if}
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" />
 	<link rel="manifest" href="/site.webmanifest" />
 	<meta name="theme-color" content="#15803d" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
