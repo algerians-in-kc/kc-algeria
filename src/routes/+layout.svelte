@@ -6,13 +6,15 @@
 	import '@fontsource/inter/600.css';
 	import '@fontsource/inter/700.css';
 	import '@fontsource/inter/800.css';
+	import '@fontsource/noto-sans-arabic/400.css';
+	import '@fontsource/noto-sans-arabic/500.css';
+	import '@fontsource/noto-sans-arabic/600.css';
+	import '@fontsource/noto-sans-arabic/700.css';
 	import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
 	import '@fortawesome/fontawesome-free/css/solid.min.css';
 	import '@fortawesome/fontawesome-free/css/brands.min.css';
 	import '../app.css';
 	import { onNavigate } from '$app/navigation';
-	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
 	import GoogleAnalytics from '$lib/components/GoogleAnalytics.svelte';
 	import BackToTop from '$lib/components/BackToTop.svelte';
 	import { page } from '$app/state';
@@ -29,10 +31,6 @@
 			});
 		});
 	});
-
-	const hideHelp = $derived(
-		page.url.pathname === '/contact' || page.url.pathname === '/community'
-	);
 
 	// Keep preview/staging deploys out of search engines. Any *.vercel.app URL or
 	// localhost is treated as non-production and gets noindex; once a real domain is
@@ -63,27 +61,9 @@
 
 <GoogleAnalytics />
 
-<div class="min-h-screen bg-gray-50 flex flex-col">
-	<Header />
-	<main id="main-content" class="flex-1 page-transition">
-		{@render children()}
-	</main>
-	<Footer />
-</div>
+{@render children()}
 
 <BackToTop />
-
-<!-- Floating help button — mobile only, hides on contact/community pages -->
-{#if !hideHelp}
-	<a
-		href="/newcomer"
-		class="md:hidden fixed bottom-5 right-4 z-40 bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg px-4 py-3 flex items-center gap-2 text-sm font-bold transition-all active:scale-95 no-print"
-		aria-label="Get help from the community"
-	>
-		<i class="fa-solid fa-hands-holding-heart"></i>
-		<span>Get Help</span>
-	</a>
-{/if}
 
 <style>
 	/* View Transitions API fallback */

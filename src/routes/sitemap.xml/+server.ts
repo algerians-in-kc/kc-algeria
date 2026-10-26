@@ -1,4 +1,5 @@
 import { cityOrder } from '$lib/data/cities';
+import { LOCALE_CODES } from '$lib/i18n/index';
 import type { RequestHandler } from './$types';
 
 const BASE = 'https://algeriansinKC.com';
@@ -20,17 +21,23 @@ const staticPages = [
 export const GET: RequestHandler = () => {
 	const today = new Date().toISOString().split('T')[0];
 
-	const allPages = [
+	const basePages = [
 		...staticPages.map((p) => ({ path: p.path, changefreq: p.changefreq, priority: p.priority })),
 		...cityOrder.map((slug) => ({ path: `/${slug}`, changefreq: 'monthly', priority: '0.7' })),
 	];
 
+	// One entry per language, with hreflang alternates pointing at the other languages.
+	const allPages = LOCALE_CODES.flatMap((lang) =>
+		basePages.map((p) => ({ ...p, lang, locPath: `/${lang}${p.path}` }))
+	);
+
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${allPages
 	.map(
 		(p) => `  <url>
-    <loc>${BASE}${p.path}</loc>
+    <loc>${BASE}${p.locPath}</loc>
+${LOCALE_CODES.map((l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${BASE}/${l}${p.path}" />`).join('\n')}
     <lastmod>${today}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
     <priority>${p.priority}</priority>
