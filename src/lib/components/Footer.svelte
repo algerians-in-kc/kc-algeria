@@ -76,6 +76,7 @@
 				<a href="{base}/privacy" class="hover:text-gray-400 transition-colors">{m.footer.privacy}</a>
 				<a href="{base}/terms" class="hover:text-gray-400 transition-colors">{m.footer.terms}</a>
 				<a href="{base}/contact" class="hover:text-gray-400 transition-colors">{m.footer.contact}</a>
+				<a href="https://tooljoy.app" target="_blank" rel="noopener" class="hover:text-gray-400 transition-colors">ToolJoy ↗</a>
 			</div>
 		</div>
 	</div>
